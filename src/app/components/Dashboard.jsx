@@ -6,9 +6,11 @@ import TaskList from './TaskList';
 const Dashboard = ({ groups }) => (
   <div>
     <h2>Dashboard</h2>
-    {groups.map((group) =>
-      <TaskList id={group.id} name={group.name} />
-    )}
+    {groups.map((group) => (
+      <div>
+        <TaskList id={group.id} name={group.name} />
+      </div>
+    ))}
   </div>
 );
 
