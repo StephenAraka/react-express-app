@@ -4,16 +4,20 @@ import { store } from '../store';
 import { Router, Route } from 'react-router-dom';
 import { history } from '../store/histoy';
 
+import Navigation from './Navigation';
 import Dashboard from './Dashboard';
 
 export const Main = () => (
   <Router history={history}>
     <Provider store={store} >
-      <Route
-        exact
-        path="/dashboard"
-        render={() => <Dashboard />}
-      />
+      <div>
+        <Navigation />
+        <Route
+          exact
+          path="/dashboard"
+          render={() => <Dashboard />}
+        />
+      </div>
     </Provider>
   </Router>
 
