@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import TaskList from './TaskList';
 
-
 const Dashboard = ({ groups }) => (
   <div>
     <h2>Dashboard</h2>
@@ -16,7 +15,7 @@ const Dashboard = ({ groups }) => (
 
 const mapStateToProps = (state) => {
   return {
-    groups: state.groups
+    groups: state.defaults.groups
   }
 };
 
