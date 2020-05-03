@@ -2,10 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 
-const TaskList = ({ groups }) => (
+const TaskList = ({ tasks }) => (
   <div>
-    <h2>Dashboard</h2>
-    {groups.map(group => group.name)}
+    {tasks.map(task => task.name)}
   </div>
 );
 
