@@ -20,5 +20,4 @@ export const Main = () => (
       </div>
     </Provider>
   </Router>
-
-)
+);

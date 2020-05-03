@@ -2,16 +2,17 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 
-const TaskList = ({ tasks, name }) => (
+const TaskList = ({ tasks, name, id, createNewTask }) => (
   <div>
     <h3>{name}</h3>
     <div>
       {tasks.map(task =>
-        <div>
+        <div key={task.id}>
           {task.name}
         </div>
       )}
     </div>
+    <button onClick={() => createNewTask(id)}>Add New</button>
   </div>
 );
 
@@ -24,4 +25,12 @@ const mapStateToProps = (state, ownProps) => {
   }
 };
 
-export default connect(mapStateToProps)(TaskList);
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    createNewTask(id) {
+      console.log('creating new task...', id);
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(TaskList);
